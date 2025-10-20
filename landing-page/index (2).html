@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            
+        }
+
+        /* header */
+        header{
+           
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            justify-content:space-between;
+            padding: 18px 110px;
+            align-items: center;
+            
+            
+        }
+        nav ul{
+            display: flex;
+            gap:20px;
+            list-style: none;
+        }
+        nav ul a{
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .logo{
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #2563eb;
+        }
+
+        /* main */
+        .Accueil{
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 200px 0 200px;
+        }
+        .Accueil h1{
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .Accueil p{
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .Accueil button{
+            width: 260px;
+            height: 60px;
+            background-color: #ff6b6b;;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+        }
+        /* services */
+        .grid{
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 2rem;
+        }
+        .Services{
+            padding: 20px 85px 20px 85px;
+            text-align: center;
+            background-color: #f8fafc;
+        }
+        .Services h2{
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            margin-top: 3rem;
+        }
+        .card{
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            background-color: white;
+        }
+        .card h3{
+             font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+
+        }
+        .card p{
+            color: #718096;
+            line-height: 1.6;
+        }
+        .icon{
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TechSolutions</div>
+            <ul>
+                <li><a href="#Accueil">Accueil</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">À propos</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       <section id="Accueil" class="Accueil">
+        <div>
+            <h1>Transformez Votre Vision en Réalité Digitale</h1>
+            <p>Nous créons des solutions web innovantes qui propulsent votre entreprise vers le succès. Découvrez comment nous pouvons vous aider à atteindre vos objectifs</p>
+            <button>Commencer maintenant</button>
+        </div>
+       </section>
+       <section id="Services" class="Services">
+        <div>
+            <h2>Nos Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">🚀</div>
+                    <h3>Développement Web</h3>
+                    <p>Création de sites web modernes et performants avec les dernières technologies pour une expérience utilisateur optimale.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📱</div>
+                    <h3>Applications Mobile</h3>
+                    <p>Développement d'applications mobiles natives et cross-platform pour iOS et Android avec une interface intuitive.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🎨</div>
+                    <h3>Design UI/UX</h3>
+                    <p>Conception d'interfaces utilisateur attrayantes et ergonomiques qui convertissent vos visiteurs en clients</p>
+                </div>
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>Optimisation Performance</h3>
+                    <p>Amélioration des performances de vos applications pour une vitesse de chargement optimale et un meilleur référencement.</p>
+                </div>
+               <div class="card">
+                    <div class="icon">🔒</div>
+                    <h3>Sécurité Web</h3>
+                    <p>Mise en place de mesures de sécurité robustes pour protéger vos données et celles de vos utilisateurs</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📊</div>
+                    <h3>Analytics & SEO</h3>
+                    <p>Optimisation pour les moteurs de recherche et mise en place d'outils d'analyse pour mesurer vos performances</p>
+                </div>
+                
+            </div>
+        </div>
+       </section>
+       <section></section>
+       <section></section>
+    </main>
+    <footer></footer>
+    
+</body>
+</html>

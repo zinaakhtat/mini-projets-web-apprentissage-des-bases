@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .global{
+            
+            min-height: 100vh;
+            background: linear-gradient(to right,rgb(2, 2, 2) , rgb(122, 122, 122));
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            align-items: center;
+        }
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #faaa33;
+            margin-top: 40px;
+        }
+        h2{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #e78f47;
+            font-weight: bold;
+            margin-bottom: 10px ;
+            padding-left: 35px;
+            
+            
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-size: large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        input:focus{
+            outline-color: orange;
+            
+        }
+        .design{
+            height: 180px;
+            width: 300px;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border-radius: 5px;
+            padding-top: 20px;
+            
+        }
+        .bloc{
+            display: flex;
+            height: 180;
+            width: 650px;
+            gap: 20px;
+        }
+        .carte{
+            height: 180px;
+            width: 400px;
+            background-color: aliceblue; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global">
+      <h1>weather app</h1>
+      <div>
+       <h2>entrer votre ville</h2>
+       <input type="text">
+      </div>
+    <div class="bloc">
+      <div class="affichage"></div>
+      <div id="map"></div>
+    </div>
+    
+    
+    </div>
+   <script>
+    let map;
+    async function getdata() {
+     
+     let ville=document.querySelector("input").value.trim();
+    
+     let apikey="e4b8f2180b99a6d1e385a0db8ea33813";
+     let url=`https://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=${apikey}&units=metric&lang=fr`;
+     try{
+        if(ville != ""){
+         let reponse=await fetch(url);
+         if(reponse.ok){
+          let data=await reponse.json();
+          
+          let affichage=document.querySelector(".affichage");
+          affichage.innerHTML=`<h3>Météo dans la ville ${ville}</h3>
+           <i class="fas fa-temperature-half" style="color: orange; font-size: 30px; margin-right: 10px;"></i>
+            <p>${data.main.temp}°C</p>`;
+           affichage.classList.add("design");
+           //carte
+           let carte=document.querySelector("#map").classList.add("carte");
+           const lat = data.coord.lat;
+           const lon = data.coord.lon;
+           if(!map){
+                map=L.map('map').setView([lat, lon], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+     L.marker([lat, lon]).addTo(map)
+        .bindPopup(`📍 ${ville}`)
+        .openPopup();
+           }
+           else{
+            map.setView([lat, lon], 13);
+  // Mettre à jour la position du marqueur
+  marker.setLatLng([lat, lon]).setPopupContent(`📍 ${ville}`).openPopup();
+           }
+
+         }
+         else{
+             throw new Error("problem pendant l'envois de la rquette ");
+        }
+         }
+        }
+
+     
+    catch (error) {
+    console.error("Erreur lors de la récupération de la météo :", error);
+  }}
+  let input=document.querySelector("input");
+ input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    getdata();
+  }
+});
+   </script>
+</body>
+</html>

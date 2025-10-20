@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+
+
+    <style>
+        
+        body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+            }
+       
+        #pageinitial{
+         background: linear-gradient(to right, rgb(138, 250, 250), rgb(255, 255, 183));
+        min-height: 100vh;
+         flex-direction: column;
+         display: flex;
+         align-items: center;
+          /* gap:90px; */
+          padding-top: 20px;
+        }
+        h1{
+            margin-bottom: 25px;
+            color: rgb(99, 102, 101);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        h2{
+            color: rgb(99, 102, 101);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+        }
+        input{
+            height: 50px;
+            width: 400px;
+            border: none;
+            padding-left: 20px;
+            border-radius: 5px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+            font-size: large;
+            color:  rgb(83, 83, 83); 
+        }
+        input:focus {
+        outline-color: rgb(60, 245, 190);
+        
+        }
+        .affichage{
+            width: 800px;
+            min-height: 350px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 30px;
+            border-radius: 5px;
+            margin-bottom: 80px;
+            
+        }
+        button{
+            
+            width: 100px;
+            height: 50px;
+            background-color: aquamarine;
+            background-color: rgb(93, 238, 190);
+            border:none;
+            color:  rgb(83, 83, 83); 
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+            font-size: large;
+            border-radius: 5px;
+            cursor: pointer; 
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+        button:active {
+        background-color: #ddee91;
+        transform: scale(0.95); /* bouton légèrement réduit */
+        
+         }
+         button:hover{
+            transform: translateX(10px);
+         }
+         .newele{
+            height: 70px;
+            width: 750px;
+            
+            color: rgb(83, 83, 83);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+            font-size: large;
+            display: flex;
+            background-color: rgb(255, 255, 214);
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 60px;
+            box-sizing: border-box;
+           
+            border-radius: 5px;
+            margin: 10px auto 10px auto;
+
+         }
+        .span{
+        
+         width: 100px;
+        display: flex;
+        justify-content: center;
+       align-items: center; 
+        gap: 13px; 
+            
+        }
+        /* .complited{
+            background-color:rgb(103, 247, 103) ;
+        } */
+      
+    </style>
+</head>
+<body>
+  
+     <div id="pageinitial">
+        
+           <h1>TO DO LIST</h1>
+     <h2>New task <i class="fas fa-plus"></i>
+</h2>
+<div>
+ <input  type="text">
+     <button>ajouter</button>
+      
+</div>
+     
+    
+    
+    
+  <div class="affichage">
+
+  </div>
+    
+    </div>
+  <script src="mov.js"></script>
+</body>
+</html>
