@@ -22,14 +22,14 @@ These exercises helped me practice **page structure**, **layout design**, and **
 
 ### Weather App
 <p align="center">
-  <img src="docs/landingpage.png" alt="landingpage" width="600"/>
+  <img src="docs/weather-app.png" alt="weather-app" width="600"/>
   </p>
 
   <br/>
   
 ### Simple To-Do List 
 <p align="center">
-  <img src="docs/landingpage.png" alt="landingpage" width="600"/>
+  <img src="docs/todolistimage.png" alt="todolistimag" width="600"/>
   </p>
 
   <br/>
@@ -42,4 +42,16 @@ These exercises helped me practice **page structure**, **layout design**, and **
   <br/>
 
 
+## 🚀 How to Run a Project
 
+1. **Clone this repository:**
+
+```bash
+git clone https://github.com/your-username/mini-web-projects.git
+```
+2. **Navigate** to the project folder you want to view:
+```bash
+cd mini-web-projects/project-name
+```
+3. **Open** the project in your browser:
+ 
